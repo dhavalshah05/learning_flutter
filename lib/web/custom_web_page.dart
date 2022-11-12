@@ -108,6 +108,7 @@ class CustomWebPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      ExperienceCard(companyName: "Fynd", year: "2022 - Counting...",),
                       ExperienceCard(companyName: "Hyperlink Infosystem", year: "2018 - 2022",),
                       ExperienceCard(companyName: "ITGo Software Solutions", year: "2016 - 2018",),
                       ExperienceCard(companyName: "Samcom Technologies", year: "2016 - 2016", removeBottomMargin: true,),
@@ -310,6 +311,25 @@ class LeftHeaderSection extends StatelessWidget {
 
   const LeftHeaderSection({Key? key, required this.isDesktop}) : super(key: key);
 
+  Widget getAvatarImage() {
+    if (isDesktop) {
+      return const SizedBox.shrink();
+    } else {
+      return CircleAvatar(
+        radius: 60,
+        child: ClipOval(
+          child: Image.asset(
+            "assets/my.jpeg",
+            fit: BoxFit.cover,
+            alignment: Alignment.topCenter,
+            height: double.infinity,
+            width: double.infinity,
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -317,6 +337,7 @@ class LeftHeaderSection extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
         children: [
+          getAvatarImage(),
           Name(fontFamily: "mallory", fontBold: FontWeight.w900),
           SubText(fontFamily: "mallory", fontRegular: FontWeight.w500),
           SizedBox(height: 20,),
@@ -344,10 +365,12 @@ class RightHeaderSection extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              color: Colors.red,
-              height: 250,
-              width: 250,
+            Image.asset(
+              "assets/my.jpeg",
+              height: 300,
+              width: 300,
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.topCenter,
             ),
           ],
         ),
