@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:learning_flutter/web/contribution_section.dart';
 import 'package:learning_flutter/web/experience_section.dart';
 import 'package:learning_flutter/web/portfolio_project.dart';
 
@@ -132,6 +133,7 @@ class CustomWebPage extends StatelessWidget {
                   ),
                 ),
               ),
+              ContributionSection(),
               FooterSection(),
             ],
           ),
