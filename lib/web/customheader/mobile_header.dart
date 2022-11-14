@@ -16,33 +16,40 @@ class MobileHeader extends StatefulWidget {
 
 class _MobileHeaderState extends State<MobileHeader> {
 
+
+
   @override
   Widget build(BuildContext context) {
+    var item = Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
+          HeaderLink(title: "Home"),
+          SizedBox(
+            height: 8,
+          ),
+          HeaderLink(title: "Projects"),
+          SizedBox(
+            height: 8,
+          ),
+          HeaderLink(title: "Contact")
+        ],
+      ),
+    );
+
     return Container(
       width: double.infinity,
       color: Colors.blueGrey.withAlpha(50),
       padding: const EdgeInsets.all(8),
       child: Stack(
         children: [
-          !widget.isHeaderVisible
-              ? SizedBox.shrink()
-              : Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      HeaderLink(title: "Home"),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      HeaderLink(title: "Projects"),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      HeaderLink(title: "Contact")
-                    ],
-                  ),
-                ),
+          AnimatedCrossFade(
+            duration: const Duration(milliseconds: 300),
+            firstChild: item,
+            secondChild: const SizedBox.shrink(),
+            crossFadeState: widget.isHeaderVisible ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+          ),
           IconButton(
             onPressed: () {
               setState(() {
