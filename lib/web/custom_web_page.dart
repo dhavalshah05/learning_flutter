@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:learning_flutter/web/contribution_section.dart';
+import 'package:learning_flutter/web/customheader/custom_header.dart';
+import 'package:learning_flutter/web/customheader/mobile_header.dart';
+import 'package:learning_flutter/web/customheader/web_header.dart';
 import 'package:learning_flutter/web/experience_section.dart';
 import 'package:learning_flutter/web/portfolio_project.dart';
 
@@ -99,6 +102,7 @@ class CustomWebPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              CustomHeader(),
               HeaderSection(),
               SectionContainer(
                 child: Section(

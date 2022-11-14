@@ -6,6 +6,7 @@ import 'package:learning_flutter/expense_manager/expense_manager.dart';
 import 'package:learning_flutter/sugarfree/sugarfree_app.dart';
 import 'package:learning_flutter/task/task_items.dart';
 import 'package:learning_flutter/web/custom_web_page.dart';
+import 'package:learning_flutter/web/portfolio_project.dart';
 import 'package:learning_flutter/web/web_header_item.dart';
 import 'package:learning_flutter/web_full_pages/full_portfolio_app.dart';
 
@@ -13,7 +14,7 @@ import 'game/question_game.dart';
 import 'mtb/profile_screen.dart';
 
 void main() {
-  runApp(FullPortfolioApp());
+  runApp(CustomWebPage());
 }
 
 class MainApp extends StatelessWidget {
