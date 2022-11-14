@@ -24,7 +24,7 @@ class _MobileHeaderState extends State<MobileHeader> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
+        children: [
           HeaderLink(title: "Home"),
           SizedBox(
             height: 8,

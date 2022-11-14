@@ -16,7 +16,7 @@ class WebHeader extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
+          children: [
             HeaderLink(title: "Home"),
             SizedBox(width: 8,),
             HeaderLink(title: "Projects"),
